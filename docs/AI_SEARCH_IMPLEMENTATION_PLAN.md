@@ -24,6 +24,7 @@
 - canonical、OG URL、JSON-LD、`robots.txt`、`sitemap.xml` が `https://clubkirin.com/` を指していること
 - LINE予約URL
 - Instagram URL
+- TikTok URL
 - 料金システムの確定情報
 - キャスト写真、名前、年齢の公開可否
 - 求人条件、応募導線
