@@ -232,6 +232,39 @@ img {
   line-height: 1.9;
 }
 
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 2rem;
+}
+
+.hero__actions .outline-button,
+.hero__actions .solid-button {
+  width: min(18rem, 100%);
+  margin: 0;
+}
+
+.hero__facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.4rem;
+}
+
+.hero__facts span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.4rem;
+  padding: 0.3rem 0.8rem;
+  border: 1px solid rgba(160, 214, 255, 0.36);
+  background: rgba(6, 24, 50, 0.54);
+  color: #ecf4ff;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  letter-spacing: 0;
+}
+
 .hero__logo {
   margin-top: 3rem;
   width: fit-content;
@@ -1401,6 +1434,23 @@ details p {
     line-height: 1.48;
     word-break: keep-all;
     overflow-wrap: normal;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+  }
+
+  .hero__actions .outline-button,
+  .hero__actions .solid-button {
+    width: 100%;
+  }
+
+  .hero__facts {
+    gap: 0.5rem;
+  }
+
+  .hero__facts span {
+    width: 100%;
   }
 
   .recruit-hero.hero {
