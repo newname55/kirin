@@ -218,7 +218,7 @@ img {
 .hero h1 {
   margin: 0;
   text-shadow: 0 0 28px rgba(36, 142, 255, 0.62);
-  font-size: clamp(3.2rem, 7vw, 7.2rem);
+  font-size: clamp(3.2rem, 7vw, 4.2rem);
   font-weight: 500;
   line-height: 1.35;
 }
@@ -1680,7 +1680,7 @@ details p {
   }
 
   .hero h1 {
-    font-size: clamp(2.35rem, 10.8vw, 3.05rem);
+    font-size: clamp(1.35rem, 10.8vw, 1.55rem);
     line-height: 1.48;
     word-break: keep-all;
     overflow-wrap: normal;
