@@ -586,6 +586,56 @@ img {
   color: #d8e7fb;
 }
 
+.event-card {
+  display: grid;
+  grid-template-columns: 10rem 1fr;
+  gap: 1.5rem;
+  align-items: center;
+  margin: 2rem 0 1.5rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(246,224,162,0.2);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.event-card a {
+  display: block;
+  flex-shrink: 0;
+}
+
+.event-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.event-card__body {
+  padding: 1rem 1.2rem 1rem 0;
+}
+
+.event-card__date {
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: var(--accent, #f6e0a2);
+  margin: 0 0 0.3rem;
+}
+
+.event-card__title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 0.5rem;
+  letter-spacing: 0.06em;
+}
+
+.event-card__desc {
+  font-size: 0.88rem;
+  color: #d8e7fb;
+  margin: 0;
+  line-height: 1.6;
+}
+
 .system {
   background:
     linear-gradient(90deg, rgba(1, 9, 22, 0.86), rgba(4, 24, 55, 0.78)),
