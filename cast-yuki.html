@@ -45,14 +45,29 @@
           <a class="cast-profile__back outline-button" href="index.html#cast">← キャスト一覧へ戻る</a>
           <div class="cast-profile__grid">
             <figure class="cast-profile__photo">
-              <img src="assets/img/cast/cast-yuki.webp" alt="ゆきのキャスト写真" width="480" height="720" loading="eager">
+              <img id="yuki-main-photo" src="assets/img/cast/cast-yuki.webp" alt="ゆきのキャスト写真" width="480" height="720" loading="eager">
+              <div class="cast-profile__thumbs">
+                <button class="cast-thumb is-active" data-src="assets/img/cast/yuki-1.webp" data-alt="ゆき" data-target="yuki-main-photo">
+                  <img src="assets/img/cast/yuki-1.webp" alt="" width="80" height="107" loading="lazy">
+                </button>
+                <button class="cast-thumb" data-src="assets/img/cast/yuki-2.webp" data-alt="ゆき" data-target="yuki-main-photo">
+                  <img src="assets/img/cast/yuki-2.webp" alt="" width="80" height="107" loading="lazy">
+                </button>
+                <button class="cast-thumb" data-src="assets/img/cast/yuki-3.webp" data-alt="ゆき" data-target="yuki-main-photo">
+                  <img src="assets/img/cast/yuki-3.webp" alt="" width="80" height="107" loading="lazy">
+                </button>
+              </div>
             </figure>
             <div class="cast-profile__info">
               <p class="section-kana">CAST</p>
               <h1 class="cast-profile__name">ゆき</h1>
               <p class="cast-profile__roman">Yuki</p>
               <dl class="cast-profile__detail">
-                <div><dt>タイプ</dt><dd>おっとり丁寧な接客で安心感抜群</dd></div>
+                <div><dt>身長</dt><dd>153cm</dd></div>
+                <div><dt>血液型</dt><dd>B型</dd></div>
+                <div><dt>出身地</dt><dd>岡山県</dd></div>
+                <div><dt>好きな食べ物</dt><dd>なんでも好き、美味しいもの食べてる時が幸せ</dd></div>
+                <div><dt>休日の過ごし方</dt><dd>友達と遊んだり美味しいもの食べたり</dd></div>
                 <div><dt>一言</dt><dd>リラックスして過ごしてください♪</dd></div>
               </dl>
               <div class="cast-profile__actions">
@@ -100,5 +115,16 @@
     </nav>
 
     <script src="assets/js/main.js" defer></script>
+    <script>
+      document.querySelectorAll('.cast-thumb').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const main = document.getElementById(btn.dataset.target);
+          main.src = btn.dataset.src;
+          main.alt = btn.dataset.alt;
+          btn.closest('.cast-profile__thumbs').querySelectorAll('.cast-thumb').forEach(b => b.classList.remove('is-active'));
+          btn.classList.add('is-active');
+        });
+      });
+    </script>
   </body>
 </html>

@@ -45,15 +45,26 @@
           <a class="cast-profile__back outline-button" href="index.html#cast">← キャスト一覧へ戻る</a>
           <div class="cast-profile__grid">
             <figure class="cast-profile__photo">
-              <img src="assets/img/cast/cast-rio.webp" alt="りおのキャスト写真" width="480" height="640" loading="eager">
+              <img id="rio-main-photo" src="assets/img/cast/cast-rio.webp" alt="りおのキャスト写真" width="480" height="640" loading="eager">
+              <div class="cast-profile__thumbs">
+                <button class="cast-thumb is-active" data-src="assets/img/cast/rio-1.webp" data-alt="りお" data-target="rio-main-photo">
+                  <img src="assets/img/cast/rio-1.webp" alt="" width="80" height="107" loading="lazy">
+                </button>
+                <button class="cast-thumb" data-src="assets/img/cast/rio-2.webp" data-alt="りお" data-target="rio-main-photo">
+                  <img src="assets/img/cast/rio-2.webp" alt="" width="80" height="107" loading="lazy">
+                </button>
+              </div>
             </figure>
             <div class="cast-profile__info">
               <p class="section-kana">CAST</p>
               <h1 class="cast-profile__name">りお</h1>
               <p class="cast-profile__roman">Rio</p>
               <dl class="cast-profile__detail">
-                <div><dt>タイプ</dt><dd>盛り上げ上手なムードメーカー</dd></div>
-                <div><dt>一言</dt><dd>一緒に楽しい時間を作りましょう！</dd></div>
+                <div><dt>誕生日</dt><dd>6月10日</dd></div>
+                <div><dt>身長</dt><dd>163cm</dd></div>
+                <div><dt>血液型</dt><dd>AB型</dd></div>
+                <div><dt>出身地</dt><dd>岡山県</dd></div>
+                <div><dt>一言</dt><dd>お酒いっぱい飲みます🍻 たくさんお話して楽しい時間を過ごしましょ🫶</dd></div>
               </dl>
               <div class="cast-profile__actions">
                 <a class="solid-button" href="tel:0862340030">来店予約・お問い合わせ</a>
@@ -100,5 +111,16 @@
     </nav>
 
     <script src="assets/js/main.js" defer></script>
+    <script>
+      document.querySelectorAll('.cast-thumb').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const main = document.getElementById(btn.dataset.target);
+          main.src = btn.dataset.src;
+          main.alt = btn.dataset.alt;
+          btn.closest('.cast-profile__thumbs').querySelectorAll('.cast-thumb').forEach(b => b.classList.remove('is-active'));
+          btn.classList.add('is-active');
+        });
+      });
+    </script>
   </body>
 </html>
