@@ -4,8 +4,7 @@
 
 - リポジトリ: `/Users/newname/webproject/kirin_website`
 - ブランチ: `main`
-- 直近の大きな変更は、トップ導線の整理、`first-guide.html` の LP 化、`recruit.html` の新規追加、画像の WebP 化です。
-- さらに直近で、トップページを「高級感60% / 親しみやすさ40%」に寄せたリニューアルを実施済み。詳細は `docs/2026-06-15_top_page_renewal_friendly_luxury.md` を参照。
+- 直近の大きな変更は、現行サイト（clubkirin.com）との機能比較を踏まえた改善実装（2026-06-20）。詳細は `docs/2026-06-20_improvements.md` を参照。
 
 ## 表現ルール（必読・厳守）
 
@@ -16,64 +15,93 @@
 ## 主要ページ
 
 - `index.html`
-  - トップページ
-  - 「初めての方へ」と「求人情報」への導線を追加済み
-  - Hero: H1は「岡山・柳町のキャバクラ / club 麒麟」の2階層構成 + キャッチコピー
-  - Concept直下に「初めての麒麟」漫画風セクション（`guide-flow1〜3.webp` 使用）を追加済み
+  - トップページ（シングルページ構成 + 各サブページへのリンク）
+  - Hero: **3枚スライダー**（hero.webp / interior.webp / glass.webp、5秒自動切替）
+  - Concept直下に「初めての麒麟」漫画風セクション（`guide-flow1〜3.webp` 使用）
   - Concept内に4枚のカード（`.concept-points`）で麒麟の強みを紹介
-  - FAQセクションとFAQPage構造化データは6問（初めて/一人/カード/指名/団体/求人）で同期済み
-    - 「クレジットカードは使えますか？」の回答は「VISA・Mastercard・JCB・American Express・Diners Club」対応を明記
-  - LINE予約は実施していないため、`.contact-strip` の「LINEで予約」ボタンと `.price-box` の「電話・LINE受付」表記は削除済み（電話のみの導線に変更）。`recruit.html` の求人問い合わせ用LINEリンク（`@371frwet`）は対象外で残置
-  - `</body>` 直前にモバイル下部固定CTAバー（`.mobile-cta-bar`、TEL/GUIDE/RECRUIT）あり
+  - FAQセクションとFAQPage構造化データは6問で同期済み
+  - キャストカードは各個別ページ（`cast-*.html`）にリンク済み
+  - Instagramフィード: **LightWidget**（ウィジェットID: `fda134fa48075f18a39ebae8f25afdfc`、6列グリッド表示）
+  - SNSセクション: Instagram + TikTok リンク + LightWidgetフィード
+  - 掲載サイト: ナイツネット・そら街ナイトワーク・体入ショコラ・dqn・体入エミリー・**ポケパラ**・**ヨルコム**
+  - お問い合わせは電話のみ（フォームなし）
+  - `</body>` 直前にモバイル下部固定CTAバー（TEL/GUIDE/RECRUIT）
+
+- `cast-list.html`
+  - キャスト一覧ページ（index.htmlの「キャスト一覧を見る」ボタンのリンク先）
+  - 5名のカードを表示、各個別ページへリンク
+
+- `cast-asuka.html` / `cast-kanon.html` / `cast-rio.html` / `cast-runa.html` / `cast-yuki.html`
+  - 各キャストのプロフィールページ
+  - 写真・名前・ローマ字・タイプ・一言・来店予約TELボタンを掲載
+  - 「← キャスト一覧へ戻る」で index.html#cast に戻る
+
 - `first-guide.html`
   - 麒麟のコンセプト説明 LP
-  - 漫画調の流れ画像は `assets/img/guide-flow1.webp` 〜 `guide-flow5.webp`（`index.html` の「初めての麒麟」セクションでも1〜3を再利用中）
-  - モバイル下部固定CTAバーあり
+  - 漫画調の流れ画像は `guide-flow1.webp` 〜 `guide-flow5.webp`
+
 - `recruit.html`
   - 求人ページ
   - 体験時給、入店時給、応募導線、掲載先リンクを掲載
-  - モバイル下部固定CTAバーあり
+  - 求人問い合わせ用LINEリンク（`@371frwet`）あり（「LINE予約」とは別）
+
 - `system.html`
   - 料金システムページ
-  - モバイル下部固定CTAバーあり
+
 - `privacy.html`
   - プライバシーポリシー
 
 ## 画像とアセット
 
-- 流れ画像は PNG から WebP に差し替え済み
-- 更新済み主要画像:
-  - `assets/img/hero.webp`
-  - `assets/img/interior.webp`
-  - `assets/img/glass.webp`
-  - `assets/img/guide-flow1.webp` 〜 `guide-flow5.webp`
-- 旧流れ PNG は削除済み
-- `assets/img/guide-title.png` と `assets/img/store_info.jpg` は現状使用中
-- `assets/img/cast-placeholders.webp` は `assets/css/style.css` から参照あり
+- `assets/img/hero.webp` — Heroスライダー1枚目
+- `assets/img/interior.webp` — Heroスライダー2枚目
+- `assets/img/glass.webp` — Heroスライダー3枚目
+- `assets/img/guide-flow1.webp` 〜 `guide-flow5.webp` — 漫画風フロー画像
+- `assets/img/guide-title.png` / `assets/img/store_info.jpg` — 使用中
+- `assets/img/cast/cast-asuka.webp` — あすか写真
+- `assets/img/cast/cast-kanon.webp` — かのん写真
+- `assets/img/cast/cast-rio.webp` — りお写真
+- `assets/img/cast/cast-runa.webp` — るな写真
+- `assets/img/cast/cast-yuki.webp` — ゆき写真
+- `assets/img/cast/cast-hana.webp` / `cast-nattsu.webp` — 未使用（削除不要）
+- `assets/img/cast-placeholders.webp` — `assets/css/style.css` から `.link-card--cast::before` で参照中。削除不要。
 
 ## ナビ・導線
 
-- トップのヘッダーとフッターに `first-guide.html` と `recruit.html` の導線あり
-- `sitemap.xml` に両ページを追加済み
+- ヘッダーナビ: TOP / SYSTEM / CAST / ACCESS / GUIDE / RECRUIT
+- フッターナビ: TOP / 料金システム / キャスト / アクセス / 初めての方へ / 求人情報 / お問い合わせ / プライバシーポリシー
+- モバイル下部固定CTAバー: TEL / 初めての方へ(GUIDE) / 求人情報(RECRUIT)
+- `sitemap.xml` に主要ページ記載済み
+
+## LINEについて
+
+- LINE予約は実施していないためヘッダー・CTAバーに LINE 導線なし
+- 求人応募用LINE（`@371frwet`）は `recruit.html` にのみ存在
+- LINE公式アカウント稼働後はCTAバーのGUIDEボタンをLINE導線に差し替え推奨
+- `.line-cta` の CSS スタイルは `recruit.html` で使用中のため残置
+
+## Instagram フィード（LightWidget）
+
+- `index.html` の SNSセクション内に埋め込み済み
+- ウィジェットID: `fda134fa48075f18a39ebae8f25afdfc`（6列グリッド）
+- LightWidget の設定変更 → 「Create」→ 新しいiframeのsrc属性のIDだけ差し替えればOK
+- `<script src="https://cdn.lightwidget.com/widgets/lightwidget.js">` はページ内1本のみ（重複注意）
 
 ## ここから触るなら
 
-- 見た目調整は `assets/css/style.css`
-- トップ導線は `index.html`
-- コンセプト LP は `first-guide.html`
-- 求人周りは `recruit.html`
+- 見た目調整: `assets/css/style.css`
+- トップ導線: `index.html`
+- ヒーロースライダーの画像変更: `index.html` の `.hero-slide` の `style` 属性の `url(...)` を差し替え
+- スライダーの切替間隔変更: `assets/js/main.js` の `setInterval` の `5000`（ミリ秒）を変更
+- キャスト追加: `cast-*.html` を新規作成 → `index.html` と `cast-list.html` のキャストリストに追加
+- Instagramフィード更新: LightWidgetダッシュボードでウィジェットを編集 → 新IDをiframeのsrcに反映
+- コンセプト LP: `first-guide.html`
+- 求人周り: `recruit.html`
 
 ## 注意点
 
-- 既存のヘッダー・フッター・高級感のトーンは維持する
 - `cast-placeholders.webp` は未使用画像ではないので削除しない
-- 画像差し替えの際は、HTML の `src` と `width` / `height` をあわせて確認する
-- `.hero__logo`（club / 麒麟 / -Kirin- の大きな装飾ブロック）は `index.html` から削除済みだが、`recruit.html` でまだ使用中なのでCSSは残している
-- LINEは「準備中」のため、ヘッダー（コミット `0af41a3`）・モバイル下部CTAバーともにLINE導線は未設置。公式LINE稼働後に追加する
-
-## 直近の実装メモ
-
-- LP は静的企業ページではなく、特設コンテンツ寄りの構成
-- 「麒麟の最大の特徴」「普通のキャバクラと何が違う？」「ご来店の流れ」の見出し重複は、上位ラベルを短くして整理済み
-- 流れの漫画画像は 5 枚の個別カードで縦読みしやすくした
-
+- `guide-flow1〜5.webp` は `index.html`（1〜3枚目）と `first-guide.html`（全5枚）で共用
+- 画像差し替えの際は HTML の `src` と `width` / `height` をあわせて確認する
+- `.hero__logo` CSS は `recruit.html` で使用中のため残置
+- LightWidget の `<script>` タグはページ内1本のみにする（重複するとフィードが崩れる場合あり）
