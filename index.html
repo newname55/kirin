@@ -143,7 +143,11 @@
 
     <main id="top">
       <section class="hero" aria-labelledby="hero-title">
-        <div class="hero__media" role="img" aria-label="青く輝くclub麒麟の上質な店内"></div>
+        <div class="hero-slider" aria-hidden="true">
+          <div class="hero-slide is-active" data-slide style="background-image: linear-gradient(90deg,rgba(1,7,17,.72) 0%,rgba(1,7,17,.38) 33%,rgba(1,7,17,.04) 72%),linear-gradient(180deg,rgba(1,7,17,.58) 0%,rgba(1,7,17,0) 24%,rgba(1,7,17,.16) 100%),url('assets/img/hero.webp?v=20260615-interior')"></div>
+          <div class="hero-slide" data-slide style="background-image: linear-gradient(90deg,rgba(1,7,17,.72) 0%,rgba(1,7,17,.38) 33%,rgba(1,7,17,.04) 72%),linear-gradient(180deg,rgba(1,7,17,.58) 0%,rgba(1,7,17,0) 24%,rgba(1,7,17,.16) 100%),url('assets/img/interior.webp?v=20260615-interior')"></div>
+          <div class="hero-slide" data-slide style="background-image: linear-gradient(90deg,rgba(1,7,17,.72) 0%,rgba(1,7,17,.38) 33%,rgba(1,7,17,.04) 72%),linear-gradient(180deg,rgba(1,7,17,.58) 0%,rgba(1,7,17,0) 24%,rgba(1,7,17,.16) 100%),url('assets/img/glass.webp')"></div>
+        </div>
         <div class="hero__content">
           <h1 id="hero-title" class="hero__title">
             <span class="hero__title-eyebrow">岡山・柳町のキャバクラ</span>
@@ -252,39 +256,57 @@
           </div>
           <div class="cast-list" aria-label="キャスト紹介">
             <article class="cast-card cast-card--one">
-              <div class="cast-card__photo">
-                <img src="assets/img/cast-asuka.webp" alt="あすかのキャスト写真" width="627" height="627" loading="lazy">
-              </div>
-              <h3>あすか</h3>
-              <p>Asuka</p>
-              <small>AGE.24</small>
+              <a class="cast-card__link" href="cast-asuka.html" aria-label="あすかの詳細ページへ">
+                <div class="cast-card__photo">
+                  <img src="assets/img/cast/cast-asuka.webp" alt="あすかのキャスト写真" width="240" height="313" loading="lazy">
+                </div>
+                <h3>あすか</h3>
+                <p>Asuka</p>
+                <small>CAST</small>
+              </a>
             </article>
             <article class="cast-card cast-card--two">
-              <div class="cast-card__photo">
-                <img src="assets/img/cast-nattsu.webp" alt="なっつのキャスト写真" width="627" height="627" loading="lazy">
-              </div>
-              <h3>なっつ</h3>
-              <p>Nattsu</p>
-              <small>CAST</small>
+              <a class="cast-card__link" href="cast-kanon.html" aria-label="かのんの詳細ページへ">
+                <div class="cast-card__photo">
+                  <img src="assets/img/cast/cast-kanon.webp" alt="かのんのキャスト写真" width="240" height="427" loading="lazy">
+                </div>
+                <h3>かのん</h3>
+                <p>Kanon</p>
+                <small>CAST</small>
+              </a>
             </article>
             <article class="cast-card cast-card--three">
-              <div class="cast-card__photo">
-                <img src="assets/img/cast-rio.webp" alt="りおのキャスト写真" width="627" height="627" loading="lazy">
-              </div>
-              <h3>りお</h3>
-              <p>Rio</p>
-              <small>CAST</small>
+              <a class="cast-card__link" href="cast-rio.html" aria-label="りおの詳細ページへ">
+                <div class="cast-card__photo">
+                  <img src="assets/img/cast/cast-rio.webp" alt="りおのキャスト写真" width="90" height="120" loading="lazy">
+                </div>
+                <h3>りお</h3>
+                <p>Rio</p>
+                <small>CAST</small>
+              </a>
             </article>
             <article class="cast-card cast-card--four">
-              <div class="cast-card__photo">
-                <img src="assets/img/cast-hana.webp" alt="はなのキャスト写真" width="627" height="627" loading="lazy">
-              </div>
-              <h3>はな</h3>
-              <p>Hana</p>
-              <small>AGE.23</small>
+              <a class="cast-card__link" href="cast-runa.html" aria-label="るなの詳細ページへ">
+                <div class="cast-card__photo">
+                  <img src="assets/img/cast/cast-runa.webp" alt="るなのキャスト写真" width="240" height="320" loading="lazy">
+                </div>
+                <h3>るな</h3>
+                <p>Runa</p>
+                <small>CAST</small>
+              </a>
+            </article>
+            <article class="cast-card cast-card--five">
+              <a class="cast-card__link" href="cast-yuki.html" aria-label="ゆきの詳細ページへ">
+                <div class="cast-card__photo">
+                  <img src="assets/img/cast/cast-yuki.webp" alt="ゆきのキャスト写真" width="240" height="360" loading="lazy">
+                </div>
+                <h3>ゆき</h3>
+                <p>Yuki</p>
+                <small>CAST</small>
+              </a>
             </article>
           </div>
-          <a class="outline-button" href="#contact">キャスト一覧を見る</a>
+          <a class="outline-button" href="cast-list.html">キャスト一覧を見る</a>
         </div>
       </section>
 
@@ -336,9 +358,15 @@
               <span>定休日：月曜日</span>
             </address>
           </div>
-          <figure class="access-photo">
-            <img src="assets/img/hero.webp?v=20260615-interior" alt="club麒麟のラグジュアリーな通路と客席" width="1642" height="1094" loading="lazy">
-          </figure>
+          <div class="access-map" aria-label="club麒麟 Kirinの地図">
+            <iframe
+              title="club麒麟 Kirinの地図"
+              src="https://www.google.com/maps?q=%E5%B2%A1%E5%B1%B1%E7%9C%8C%E5%B2%A1%E5%B1%B1%E5%B8%82%E5%8C%97%E5%8C%BA%E6%9F%B3%E7%94%BA%E4%B8%80%E4%B8%81%E7%9B%AE14-12%20%E8%A5%BF%E5%B7%9D100%E3%83%93%E3%83%AB8%E9%9A%8E&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen></iframe>
+            <a href="https://www.google.com/maps/search/?api=1&query=%E5%B2%A1%E5%B1%B1%E7%9C%8C%E5%B2%A1%E5%B1%B1%E5%B8%82%E5%8C%97%E5%8C%BA%E6%9F%B3%E7%94%BA%E4%B8%80%E4%B8%81%E7%9B%AE14-12%20%E8%A5%BF%E5%B7%9D100%E3%83%93%E3%83%AB8%E9%9A%8E" target="_blank" rel="noopener noreferrer">Googleマップで開く</a>
+          </div>
         </div>
       </section>
 
@@ -406,6 +434,9 @@
             <span>086-234-0030</span>
             <small>20:00-LAST</small>
           </a>
+          <a class="outline-button contact-form-btn" href="contact.html">
+            <span>フォームで問い合わせ</span>
+          </a>
         </div>
       </section>
 
@@ -430,6 +461,19 @@
               </span>
               <span class="social-link__arrow" aria-hidden="true">↗</span>
             </a>
+          </div>
+          <!-- Instagram投稿フィード -->
+          <div class="instagram-feed" aria-label="Instagramフィード">
+            <div class="instagram-feed__grid">
+              <!-- 各<a>のhrefを実際の投稿URLに差し替えてください -->
+              <a class="ig-cell" href="https://www.instagram.com/clubkirin" target="_blank" rel="noopener noreferrer" aria-label="Instagramの投稿を見る"></a>
+              <a class="ig-cell" href="https://www.instagram.com/clubkirin" target="_blank" rel="noopener noreferrer" aria-label="Instagramの投稿を見る"></a>
+              <a class="ig-cell" href="https://www.instagram.com/clubkirin" target="_blank" rel="noopener noreferrer" aria-label="Instagramの投稿を見る"></a>
+              <a class="ig-cell" href="https://www.instagram.com/clubkirin" target="_blank" rel="noopener noreferrer" aria-label="Instagramの投稿を見る"></a>
+              <a class="ig-cell" href="https://www.instagram.com/clubkirin" target="_blank" rel="noopener noreferrer" aria-label="Instagramの投稿を見る"></a>
+              <a class="ig-cell" href="https://www.instagram.com/clubkirin" target="_blank" rel="noopener noreferrer" aria-label="Instagramの投稿を見る"></a>
+            </div>
+            <a class="outline-button instagram-feed__more" href="https://www.instagram.com/clubkirin" target="_blank" rel="noopener noreferrer">Instagramでもっと見る</a>
           </div>
         </div>
       </section>
@@ -460,6 +504,14 @@
             <a class="listing-link" href="https://emily-job.jp/cabaretclub/okayama/city897/3091/" target="_blank" rel="noopener noreferrer">
               <span class="listing-link__label">体入エミリー</span>
               <span class="listing-link__meta">求人掲載</span>
+            </a>
+            <a class="listing-link" href="https://www.pokepara.jp/okayama/m721/a1654/shop13296/" target="_blank" rel="noopener noreferrer">
+              <span class="listing-link__label">ポケパラ</span>
+              <span class="listing-link__meta">掲載ページ</span>
+            </a>
+            <a class="listing-link" href="https://www.yorucom.com/mshop/83168918/" target="_blank" rel="noopener noreferrer">
+              <span class="listing-link__label">ヨルコム</span>
+              <span class="listing-link__meta">掲載ページ</span>
             </a>
           </div>
         </div>

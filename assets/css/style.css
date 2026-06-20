@@ -427,6 +427,39 @@ img {
   box-shadow: inset 0 0 70px rgba(0, 45, 120, 0.55);
 }
 
+.access-map {
+  position: relative;
+  display: grid;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  border: 1px solid rgba(112, 188, 255, 0.44);
+  background: #06172e;
+  box-shadow: var(--shadow);
+}
+
+.access-map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  filter: saturate(0.85) contrast(1.05);
+}
+
+.access-map a {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.5rem;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid rgba(246, 224, 162, 0.62);
+  background: rgba(2, 12, 30, 0.88);
+  color: #fff7e1;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  letter-spacing: 0;
+}
+
 .center {
   text-align: center;
 }
@@ -439,8 +472,8 @@ img {
 
 .cast-list {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: clamp(1rem, 3vw, 2rem);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: clamp(0.8rem, 2vw, 1.4rem);
   margin-top: 2.5rem;
 }
 
@@ -2014,6 +2047,320 @@ details p {
   .hero .hero__catch {
     font-size: 1.02rem;
     line-height: 1.75;
+  }
+}
+
+/* ── Hero Slider ── */
+.hero-slider {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-position: center;
+  background-size: cover;
+  opacity: 0;
+  transition: opacity 1.4s ease;
+}
+
+.hero-slide.is-active {
+  opacity: 1;
+}
+
+/* ── Cast card link ── */
+.cast-card__link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.cast-card__link:hover .cast-card__photo img {
+  transform: scale(1.04);
+  transition: transform 0.4s ease;
+}
+
+.cast-card__photo img {
+  transition: transform 0.4s ease;
+}
+
+/* ── Instagram Feed ── */
+.instagram-feed {
+  margin-top: 2.8rem;
+}
+
+.instagram-feed__grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.5rem;
+}
+
+.ig-cell {
+  aspect-ratio: 1;
+  background:
+    linear-gradient(135deg, rgba(101, 199, 255, 0.12), rgba(0, 80, 200, 0.1)),
+    rgba(6, 24, 50, 0.8);
+  border: 1px solid rgba(101, 199, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.ig-cell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(101, 199, 255, 0.1), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.ig-cell:hover {
+  border-color: rgba(101, 199, 255, 0.5);
+}
+
+.ig-cell:hover::before {
+  opacity: 1;
+}
+
+.instagram-feed__more {
+  margin-top: 1.6rem;
+  width: min(18rem, 100%);
+}
+
+/* ── Contact form button ── */
+.contact-form-btn {
+  min-width: 12rem;
+}
+
+/* ── Cast profile page ── */
+.cast-profile__inner {
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.cast-profile__back {
+  display: inline-flex;
+  margin-bottom: 2.5rem;
+  min-height: 2.8rem;
+  width: auto;
+}
+
+.cast-profile__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: start;
+}
+
+.cast-profile__photo {
+  margin: 0;
+  border: 1px solid rgba(105, 192, 255, 0.35);
+}
+
+.cast-profile__photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.cast-profile__name {
+  font-size: clamp(2.4rem, 5vw, 3.2rem);
+  font-weight: 500;
+  margin: 0.4rem 0 0;
+  line-height: 1.2;
+}
+
+.cast-profile__roman {
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  margin: 0.4rem 0 0;
+}
+
+.cast-profile__detail {
+  margin: 2rem 0 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.cast-profile__detail > div {
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.cast-profile__detail dt {
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 0.82rem;
+}
+
+.cast-profile__detail dd {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.cast-profile__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 2.5rem;
+}
+
+.cast-profile__actions .solid-button,
+.cast-profile__actions .outline-button {
+  width: auto;
+  margin: 0;
+  min-width: 12rem;
+}
+
+/* ── Contact page / form ── */
+.contact-page__inner {
+  max-width: 52rem;
+  margin: 0 auto;
+}
+
+.contact-page__tel {
+  display: flex;
+  justify-content: center;
+  margin: 2.5rem 0 0;
+}
+
+.contact-page__tel .phone-cta {
+  min-width: 18rem;
+}
+
+.contact-page__divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 2.5rem 0;
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 0.82rem;
+}
+
+.contact-page__divider::before,
+.contact-page__divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+.contact-form {
+  display: grid;
+  gap: 1.6rem;
+}
+
+.contact-form__group {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.contact-form__group label {
+  font-family: var(--sans);
+  font-size: 0.88rem;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contact-form__required {
+  display: inline-block;
+  padding: 0.1rem 0.45rem;
+  background: rgba(38, 120, 255, 0.25);
+  border: 1px solid rgba(101, 199, 255, 0.4);
+  color: var(--accent);
+  font-size: 0.68rem;
+  border-radius: 2px;
+}
+
+.contact-form input[type="text"],
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  background: rgba(4, 18, 42, 0.75);
+  border: 1px solid rgba(96, 164, 255, 0.3);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.25s ease;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  border-color: var(--accent);
+}
+
+.contact-form select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2365c7ff' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 10rem;
+}
+
+.contact-form__group--privacy label {
+  color: var(--text);
+  font-size: 0.88rem;
+}
+
+.contact-form__checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+}
+
+.contact-form__checkbox input[type="checkbox"] {
+  width: 1.1rem;
+  height: 1.1rem;
+  flex-shrink: 0;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.contact-form__submit {
+  width: 100%;
+  margin: 0.6rem 0 0;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* ── Responsive: Instagram feed ── */
+@media (max-width: 900px) {
+  .instagram-feed__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  .cast-profile__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cast-profile__photo {
+    max-width: 22rem;
+    margin: 0 auto;
   }
 }
 
