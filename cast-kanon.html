@@ -45,7 +45,24 @@
           <a class="cast-profile__back outline-button" href="index.html#cast">← キャスト一覧へ戻る</a>
           <div class="cast-profile__grid">
             <figure class="cast-profile__photo">
-              <img src="assets/img/cast/cast-kanon.webp" alt="かのんのキャスト写真" width="480" height="854" loading="eager">
+              <img id="kanon-main-photo" src="assets/img/cast/cast-kanon.webp" alt="かのんのキャスト写真" width="480" height="854" loading="eager">
+              <div class="cast-profile__thumbs">
+                <button class="cast-thumb is-active" data-src="assets/img/cast/cast-kanon.webp" data-alt="かのん 着物">
+                  <img src="assets/img/cast/cast-kanon.webp" alt="" width="80" height="107" loading="lazy">
+                </button>
+                <button class="cast-thumb" data-src="assets/img/cast/kanon-1.webp" data-alt="かのん">
+                  <img src="assets/img/cast/kanon-1.webp" alt="" width="80" height="107" loading="lazy">
+                </button>
+                <button class="cast-thumb" data-src="assets/img/cast/kanon-4.webp" data-alt="かのん">
+                  <img src="assets/img/cast/kanon-4.webp" alt="" width="80" height="107" loading="lazy">
+                </button>
+                <button class="cast-thumb" data-src="assets/img/cast/kanon2.webp" data-alt="かのん 振袖">
+                  <img src="assets/img/cast/kanon2.webp" alt="" width="80" height="107" loading="lazy">
+                </button>
+                <button class="cast-thumb" data-src="assets/img/cast/kanon-5.webp" data-alt="かのん メイド">
+                  <img src="assets/img/cast/kanon-5.webp" alt="" width="80" height="107" loading="lazy">
+                </button>
+              </div>
             </figure>
             <div class="cast-profile__info">
               <p class="section-kana">CAST</p>
@@ -108,5 +125,16 @@
     </nav>
 
     <script src="assets/js/main.js" defer></script>
+    <script>
+      document.querySelectorAll('.cast-thumb').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const main = document.getElementById('kanon-main-photo');
+          main.src = btn.dataset.src;
+          main.alt = btn.dataset.alt;
+          document.querySelectorAll('.cast-thumb').forEach(b => b.classList.remove('is-active'));
+          btn.classList.add('is-active');
+        });
+      });
+    </script>
   </body>
 </html>

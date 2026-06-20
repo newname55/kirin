@@ -2217,6 +2217,43 @@ details p {
   object-position: center top;
 }
 
+.cast-profile__thumbs {
+  display: flex;
+  gap: 0.4rem;
+  padding: 0.5rem;
+  background: rgba(0,0,0,0.3);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.cast-profile__thumbs::-webkit-scrollbar { display: none; }
+
+.cast-thumb {
+  flex-shrink: 0;
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  cursor: pointer;
+  background: none;
+  opacity: 0.6;
+  transition: opacity 0.2s, border-color 0.2s;
+}
+
+.cast-thumb img {
+  display: block;
+  width: 4rem;
+  height: 5.3rem;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.cast-thumb:hover { opacity: 0.9; }
+.cast-thumb.is-active {
+  border-color: var(--accent, #f6e0a2);
+  opacity: 1;
+}
+
 .cast-profile__name {
   font-size: clamp(2.4rem, 5vw, 3.2rem);
   font-weight: 500;
