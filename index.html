@@ -11,7 +11,7 @@
     <meta property="og:title" content="club 麒麟 Kirin｜岡山・柳町のキャバクラ">
     <meta property="og:description" content="初めてでも気軽に楽しめる、岡山・柳町のキャバクラ club 麒麟。入店時はスタッフがお席にご案内します。店舗情報、料金、アクセス、求人情報をわかりやすくご案内します。">
     <meta property="og:url" content="https://clubkirin.com/">
-    <meta property="og:image" content="https://clubkirin.com/assets/img/hero.webp?v=20260615-interior">
+    <meta property="og:image" content="https://clubkirin.com/assets/img/hero.webp?v=20260623-lcp">
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-SEHNPWLM29"></script>
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-SEHNPWLM29");</script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYZTD2MMCH"></script>
@@ -19,7 +19,8 @@
     <meta name="theme-color" content="#041128">
     <link rel="icon" href="/favicon.ico">
     <link rel="canonical" href="https://clubkirin.com/">
-    <link rel="preload" href="assets/img/hero.webp?v=20260615-interior" as="image">
+    <link rel="preload" href="assets/img/hero-sp.webp?v=20260623-lcp" as="image" media="(max-width: 768px)">
+    <link rel="preload" href="assets/img/hero.webp?v=20260623-lcp" as="image" media="(min-width: 769px)">
     <link rel="stylesheet" href="assets/css/style.css?v=20260615-renewal">
     <script type="application/ld+json">
       {
@@ -148,10 +149,19 @@
 
     <main id="top">
       <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-slider" aria-hidden="true">
-          <div class="hero-slide is-active" data-slide style="background-image: linear-gradient(90deg,rgba(1,7,17,.72) 0%,rgba(1,7,17,.38) 33%,rgba(1,7,17,.04) 72%),linear-gradient(180deg,rgba(1,7,17,.58) 0%,rgba(1,7,17,0) 24%,rgba(1,7,17,.16) 100%),url('assets/img/hero.webp?v=20260615-interior')"></div>
-          <div class="hero-slide" data-slide style="background-image: linear-gradient(90deg,rgba(1,7,17,.72) 0%,rgba(1,7,17,.38) 33%,rgba(1,7,17,.04) 72%),linear-gradient(180deg,rgba(1,7,17,.58) 0%,rgba(1,7,17,0) 24%,rgba(1,7,17,.16) 100%),url('assets/img/interior.webp?v=20260615-interior')"></div>
-          <div class="hero-slide" data-slide style="background-image: linear-gradient(90deg,rgba(1,7,17,.72) 0%,rgba(1,7,17,.38) 33%,rgba(1,7,17,.04) 72%),linear-gradient(180deg,rgba(1,7,17,.58) 0%,rgba(1,7,17,0) 24%,rgba(1,7,17,.16) 100%),url('assets/img/glass.webp')"></div>
+        <div class="hero__media" aria-hidden="true">
+          <picture class="hero__picture">
+            <source media="(max-width: 768px)" srcset="assets/img/hero-sp.webp?v=20260623-lcp" type="image/webp">
+            <source media="(min-width: 769px)" srcset="assets/img/hero.webp?v=20260623-lcp" type="image/webp">
+            <img
+              src="assets/img/hero.webp?v=20260623-lcp"
+              alt=""
+              width="1280"
+              height="853"
+              loading="eager"
+              fetchpriority="high"
+              decoding="async">
+          </picture>
         </div>
         <div class="hero__content">
           <h1 id="hero-title" class="hero__title">

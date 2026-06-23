@@ -1,14 +1,3 @@
-// Hero slider
-const slides = document.querySelectorAll("[data-slide]");
-if (slides.length > 1) {
-  let current = 0;
-  setInterval(() => {
-    slides[current].classList.remove("is-active");
-    current = (current + 1) % slides.length;
-    slides[current].classList.add("is-active");
-  }, 5000);
-}
-
 const navToggle = document.querySelector("[data-nav-toggle]");
 const nav = document.querySelector("[data-nav]");
 const toTop = document.querySelector("[data-to-top]");

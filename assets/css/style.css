@@ -196,12 +196,30 @@ img {
 .hero__media {
   position: absolute;
   inset: 0;
+  overflow: hidden;
+}
+
+.hero__media::before {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  content: "";
   background-image:
     linear-gradient(90deg, rgba(1, 7, 17, 0.72) 0%, rgba(1, 7, 17, 0.38) 33%, rgba(1, 7, 17, 0.04) 72%),
-    linear-gradient(180deg, rgba(1, 7, 17, 0.58) 0%, rgba(1, 7, 17, 0) 24%, rgba(1, 7, 17, 0.16) 100%),
-    url("../img/hero.webp?v=20260615-interior");
-  background-position: center;
-  background-size: cover;
+    linear-gradient(180deg, rgba(1, 7, 17, 0.58) 0%, rgba(1, 7, 17, 0) 24%, rgba(1, 7, 17, 0.16) 100%);
+  pointer-events: none;
+}
+
+.hero__picture {
+  position: absolute;
+  inset: 0;
+}
+
+.hero__picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .hero__content {
@@ -710,7 +728,7 @@ img {
 
 .link-card--recruit::before,
 .link-card--instagram::before {
-  background-image: linear-gradient(rgba(2, 10, 24, 0.38), rgba(2, 10, 24, 0.74)), url("../img/hero.webp?v=20260615-interior");
+  background-image: linear-gradient(rgba(2, 10, 24, 0.38), rgba(2, 10, 24, 0.74)), url("../img/hero.webp?v=20260623-lcp");
 }
 
 .link-card:hover::before {
@@ -1201,7 +1219,7 @@ details p {
   border-top: 1px solid rgba(104, 188, 255, 0.22);
   background:
     linear-gradient(90deg, rgba(2, 10, 24, 0.96), rgba(2, 10, 24, 0.74)),
-    url("../img/hero.webp?v=20260615-interior") center / cover;
+    url("../img/hero.webp?v=20260623-lcp") center / cover;
 }
 
 .system-contact h2 {
@@ -1587,7 +1605,7 @@ details p {
   border-top: 1px solid rgba(104, 188, 255, 0.22);
   background:
     linear-gradient(90deg, rgba(2, 10, 24, 0.95) 0%, rgba(2, 10, 24, 0.72) 52%, rgba(2, 10, 24, 0.95) 100%),
-    url("../img/hero.webp?v=20260615-guide") center / cover;
+    url("../img/hero.webp?v=20260623-lcp") center / cover;
 }
 
 .guide-cta__grid {
@@ -1805,13 +1823,8 @@ details p {
     min-height: 58svh;
   }
 
-  .hero__media {
-    background-image:
-      linear-gradient(90deg, rgba(1, 7, 17, 0.78) 0%, rgba(1, 7, 17, 0.46) 48%, rgba(1, 7, 17, 0.08) 100%),
-      linear-gradient(180deg, rgba(1, 7, 17, 0.68) 0%, rgba(1, 7, 17, 0.08) 36%, rgba(1, 7, 17, 0.64) 100%),
-      url("../img/hero.webp?v=20260615-interior");
-    background-position: 58% 34%;
-    background-size: cover;
+  .hero__picture img {
+    object-position: 58% 34%;
   }
 
   .hero__content {
@@ -2101,24 +2114,6 @@ details p {
 }
 
 /* ── Hero Slider ── */
-.hero-slider {
-  position: absolute;
-  inset: 0;
-}
-
-.hero-slide {
-  position: absolute;
-  inset: 0;
-  background-position: center;
-  background-size: cover;
-  opacity: 0;
-  transition: opacity 1.4s ease;
-}
-
-.hero-slide.is-active {
-  opacity: 1;
-}
-
 /* ── Cast card link ── */
 .cast-card__link {
   display: block;
