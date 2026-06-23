@@ -1,3 +1,8 @@
 assets/.DS_Store
 .DS_Store
 .claude/
+.vscode/sftp.json
+_wp_backup_partial/
+mail/
+xserver_php/
+.env.ftp
