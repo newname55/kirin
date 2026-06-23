@@ -57,7 +57,7 @@
 - `assets/img/interior.webp` — Heroスライダー2枚目
 - `assets/img/glass.webp` — Heroスライダー3枚目
 - `assets/img/guide-flow1.webp` 〜 `guide-flow5.webp` — 漫画風フロー画像
-- `assets/img/guide-title.png` / `assets/img/store_info.jpg` — 使用中
+- `assets/img/guide-title.webp` / `assets/img/store_info.webp` — 使用中
 - `assets/img/cast/cast-asuka.webp` — あすか写真
 - `assets/img/cast/cast-kanon.webp` — かのん写真
 - `assets/img/cast/cast-rio.webp` — りお写真
