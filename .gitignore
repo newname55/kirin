@@ -6,3 +6,5 @@ _wp_backup_partial/
 mail/
 xserver_php/
 .env.ftp
+crew-onboarding/app/config.local.php
+new/

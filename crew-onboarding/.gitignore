@@ -1,0 +1,6 @@
+.DS_Store
+.claude/
+sample/
+app/config.local.php
+storage/logs/*
+!storage/logs/.gitkeep
