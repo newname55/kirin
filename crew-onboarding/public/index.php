@@ -45,6 +45,10 @@ try {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex,nofollow">
     <title><?= e((string) ($character['ai_name'] ?? $config['app_name'])) ?></title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SEHNPWLM29"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-SEHNPWLM29");</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYZTD2MMCH"></script>
+    <script>gtag("config","G-VYZTD2MMCH");</script>
     <link rel="stylesheet" href="/crew-onboarding/assets/css/style.css">
 </head>
 <body>
