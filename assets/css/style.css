@@ -786,6 +786,56 @@ details p {
   line-height: 2;
 }
 
+/* CREW KIRIN チャット導線 */
+.crew-chat-panel {
+  border-top: 1px solid rgba(195, 160, 80, 0.18);
+  background:
+    radial-gradient(circle at 60% 40%, rgba(195, 160, 80, 0.08), transparent 30rem),
+    linear-gradient(180deg, rgba(2, 10, 24, 0.9), rgba(3, 16, 37, 0.97));
+}
+
+.crew-chat-inner {
+  padding-top: clamp(3rem, 6vw, 5rem);
+  padding-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.crew-chat-desc {
+  margin-top: 1rem;
+  color: var(--text-muted, rgba(255,255,255,0.6));
+  font-size: clamp(0.85rem, 1.8vw, 1rem);
+  line-height: 1.8;
+}
+
+.crew-chat-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.crew-chat-btn {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  background: linear-gradient(135deg, #c3a050, #a07830);
+  color: #fff;
+  text-decoration: none;
+  padding: 1.1rem 2.8rem;
+  border-radius: 3px;
+  letter-spacing: 0.08em;
+  transition: opacity 0.2s;
+}
+
+.crew-chat-btn:hover { opacity: 0.85; }
+
+.crew-chat-btn span { font-size: clamp(0.95rem, 2vw, 1.1rem); font-weight: 600; }
+
+.crew-chat-btn small {
+  font-size: 0.75rem;
+  opacity: 0.8;
+  letter-spacing: 0.04em;
+}
+
 .contact-strip {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
