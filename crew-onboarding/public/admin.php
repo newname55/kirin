@@ -2,17 +2,19 @@
 
 declare(strict_types=1);
 
+require_once __DIR__ . '/_bootstrap.php';
+
 header('X-Robots-Tag: noindex, nofollow');
 header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
 header('Pragma: no-cache');
 
-require_once dirname(__DIR__) . '/app/db.php';
-require_once dirname(__DIR__) . '/app/admin_common.php';
-require_once dirname(__DIR__) . '/app/response_engine.php';
-require_once dirname(__DIR__) . '/app/question_ranking.php';
-require_once dirname(__DIR__) . '/app/ai_character_settings.php';
-require_once dirname(__DIR__) . '/app/store.php';
-require_once dirname(__DIR__) . '/app/knowledge/stores.php';
+require_once CREW_PRIVATE_ROOT . '/app/db.php';
+require_once CREW_PRIVATE_ROOT . '/app/admin_common.php';
+require_once CREW_PRIVATE_ROOT . '/app/response_engine.php';
+require_once CREW_PRIVATE_ROOT . '/app/question_ranking.php';
+require_once CREW_PRIVATE_ROOT . '/app/ai_character_settings.php';
+require_once CREW_PRIVATE_ROOT . '/app/store.php';
+require_once CREW_PRIVATE_ROOT . '/app/knowledge/stores.php';
 
 function e(string $value): string
 {
@@ -1309,7 +1311,7 @@ try {
         }
     }
     arsort($castNotFoundNames);
-    $aliases = require dirname(__DIR__) . '/app/knowledge/cast_aliases.php';
+    $aliases = require CREW_PRIVATE_ROOT . '/app/knowledge/cast_aliases.php';
     // 除外語パターン（キャスト名ではないことが明らかな語）
     $excludeWordList = [
         'VIP', 'vip', 'ドリンク', '料金', '金額', '何人', 'セット', '初めて', '一人',
@@ -4660,7 +4662,7 @@ $checklist = [
                     // 接続テスト（GET ?test_wbss=1 のとき実行）
                     $wbssTestResult = null;
                     if (twin_admin_is_logged_in() && isset($_GET['test_wbss'])) {
-                        require_once dirname(__DIR__) . '/app/clients/wbss_client.php';
+                        require_once CREW_PRIVATE_ROOT . '/app/clients/wbss_client.php';
                         $testStart = microtime(true);
                         $testRes = twin_wbss_fetch_attendance($adminStoreKey);
                         $testMs = (int) round((microtime(true) - $testStart) * 1000);

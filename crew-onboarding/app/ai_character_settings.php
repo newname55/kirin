@@ -180,7 +180,7 @@ function twin_ai_character_upload_image(array $file, string $fieldName = 'charac
         default      => 'jpg',
     };
 
-    $uploadDir = dirname(__DIR__) . '/public/uploads/characters/';
+    $uploadDir = (defined('CREW_PUBLIC_ROOT') ? CREW_PUBLIC_ROOT : dirname(__DIR__) . '/public') . '/uploads/characters/';
     if (!is_dir($uploadDir) && !mkdir($uploadDir, 0755, true)) {
         return null;
     }

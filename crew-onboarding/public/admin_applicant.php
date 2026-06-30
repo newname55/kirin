@@ -2,12 +2,14 @@
 
 declare(strict_types=1);
 
+require_once __DIR__ . '/_bootstrap.php';
+
 header('X-Robots-Tag: noindex, nofollow');
 header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
 
-require_once dirname(__DIR__) . '/app/db.php';
-require_once dirname(__DIR__) . '/app/admin_common.php';
-require_once dirname(__DIR__) . '/app/store.php';
+require_once CREW_PRIVATE_ROOT . '/app/db.php';
+require_once CREW_PRIVATE_ROOT . '/app/admin_common.php';
+require_once CREW_PRIVATE_ROOT . '/app/store.php';
 
 if (!twin_admin_is_logged_in()) {
     header('Location: /crew-onboarding/admin.php');

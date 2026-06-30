@@ -2,11 +2,13 @@
 
 declare(strict_types=1);
 
-require_once dirname(__DIR__) . '/app/db.php';
-require_once dirname(__DIR__) . '/app/admin_common.php';
-require_once dirname(__DIR__) . '/app/settings.php';
-require_once dirname(__DIR__) . '/app/question_ranking.php';
-require_once dirname(__DIR__) . '/app/privacy.php';
+require_once __DIR__ . '/_bootstrap.php';
+
+require_once CREW_PRIVATE_ROOT . '/app/db.php';
+require_once CREW_PRIVATE_ROOT . '/app/admin_common.php';
+require_once CREW_PRIVATE_ROOT . '/app/settings.php';
+require_once CREW_PRIVATE_ROOT . '/app/question_ranking.php';
+require_once CREW_PRIVATE_ROOT . '/app/privacy.php';
 
 function e(string $value): string
 {

@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+require_once __DIR__ . '/_bootstrap.php';
+
 /**
  * admin_store_parse.php
  *
@@ -13,10 +15,10 @@ declare(strict_types=1);
  * レスポンス: JSON
  */
 
-require_once __DIR__ . '/../app/admin_common.php';
-require_once __DIR__ . '/../app/config.php';
-require_once __DIR__ . '/../app/knowledge/stores.php';
-require_once __DIR__ . '/../app/services/StoreSiteParser.php';
+require_once CREW_PRIVATE_ROOT . '/app/admin_common.php';
+require_once CREW_PRIVATE_ROOT . '/app/config.php';
+require_once CREW_PRIVATE_ROOT . '/app/knowledge/stores.php';
+require_once CREW_PRIVATE_ROOT . '/app/services/StoreSiteParser.php';
 
 header('Content-Type: application/json; charset=utf-8');
 header('X-Robots-Tag: noindex');

@@ -1,0 +1,17 @@
+DirectoryIndex index.php
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /crew-onboarding/
+</IfModule>
+
+# 設定・秘密情報・ドキュメント類への直接アクセスを拒否
+<FilesMatch "(\.env(\..*)?|\.git.*|composer\.(json|lock)|\.sql|\.md|\.log)$">
+    Require all denied
+</FilesMatch>
+
+# 念のためバージョン管理・設定ファイル名を個別拒否
+<FilesMatch "^(config\.local\.php|\.htaccess)$">
+    Require all denied
+</FilesMatch>

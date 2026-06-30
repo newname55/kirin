@@ -2,4 +2,6 @@
 
 declare(strict_types=1);
 
-require dirname(__DIR__) . '/app/chat_api.php';
+require_once __DIR__ . '/_bootstrap.php';
+
+require CREW_PRIVATE_ROOT . '/app/chat_api.php';

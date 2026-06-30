@@ -2,10 +2,12 @@
 
 declare(strict_types=1);
 
-$config = require dirname(__DIR__) . '/app/config.php';
+require_once __DIR__ . '/_bootstrap.php';
 
-require_once dirname(__DIR__) . '/app/store.php';
-require_once dirname(__DIR__) . '/app/knowledge/stores.php';
+$config = require CREW_PRIVATE_ROOT . '/app/config.php';
+
+require_once CREW_PRIVATE_ROOT . '/app/store.php';
+require_once CREW_PRIVATE_ROOT . '/app/knowledge/stores.php';
 
 function e(string $value): string
 {
@@ -31,8 +33,8 @@ $character = [
     'logo_image_path'      => null,
 ];
 try {
-    require_once dirname(__DIR__) . '/app/db.php';
-    require_once dirname(__DIR__) . '/app/ai_character_settings.php';
+    require_once CREW_PRIVATE_ROOT . '/app/db.php';
+    require_once CREW_PRIVATE_ROOT . '/app/ai_character_settings.php';
     $character = twin_ai_character_load_active(twin_db(), $storeKey);
 } catch (Throwable $e) {
     // DBが未起動・migration未適用の場合もデフォルト値で動作継続
