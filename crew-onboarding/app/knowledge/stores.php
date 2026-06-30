@@ -86,7 +86,7 @@ if (!function_exists('twin_all_store_configs')) {
                 'instagram_url'      => 'https://www.instagram.com/clubkirin',       // 要更新
                 'price_url'          => 'https://clubkirin.com/system.html',
                 'site_url'           => 'https://clubkirin.com/',
-                'tel'                => '086-234-0030',
+                'tel'                => '0120-000-494',
                 'default_ai_name'    => 'CREW KIRIN',
                 'default_role_label' => 'CLUB 麒麟 入店前コンシェルジュ',
                 'default_greeting'   => 'こんにちは！CREW KIRINです。体験入店・給与・勤務時間・未経験の不安など、気になることは何でも聞いてください。',
